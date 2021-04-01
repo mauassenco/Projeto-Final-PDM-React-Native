@@ -11,7 +11,7 @@ const Tab = createMaterialBottomTabNavigator();
 export default function Tabs() {
   return (
     <Tab.Navigator>
-        <Tab.Screen name="Informações" component={Produto} 
+        <Tab.Screen name="Produto" component={Produto} 
           options={{
             tabBarIcon: ({ color, size }) => <Ionicons name='information-circle' size={26} color={color} />         
           }} 

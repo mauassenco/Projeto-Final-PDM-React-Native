@@ -3,8 +3,14 @@ import { StyleSheet, Text, View, Image, TouchableHighlight } from "react-native"
 
 export default function Card(props) {
   return (  
+    // <TouchableHighlight onPress = {() => props.navigation.navigate('Produto', {
+    //   idProduto: props.id})}>  
     <TouchableHighlight onPress = {() => props.navigation.navigate('Produto', {
-      idProduto: props.id})}>  
+      screen: 'Produto',
+      params:{'idProduto': props.id},
+      }
+      )}>  
+
       <View style={styles.card} >
         <Image style={styles.foto} source={{ uri: props.img }} />
         <View style={styles.card_description}>

@@ -15,7 +15,7 @@ export default function MyStack() {
           <Stack.Screen name="Produtos" component={Produtos} 
               options={{ title:'Produtos'}, {headerTitleAlign: 'center'}}/>
           <Stack.Screen name="Produto" component={Tabs} 
-              options={{ title:'Produto'}, {headerTitleAlign: 'center'}}/>
+              options={{ title:'Produto'}, {headerTitleAlign: 'center'}} />    
       </Stack.Navigator>
   );
 }

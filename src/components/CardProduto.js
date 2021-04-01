@@ -7,7 +7,7 @@ export default function CardProduto(props) {
         <View style={styles.card} >
           <Image style={styles.foto} source={{ uri: props.img }} />
           <View style={styles.card_info}>
-            <Text>{props.produto}</Text>
+            <Text style={{paddingBottom: 10}}>{props.produto}</Text>
             <Text >{props.preco}</Text>   
           </View>
           <View style={styles.card_description}>
@@ -26,17 +26,17 @@ export default function CardProduto(props) {
       justifyContent:'space-between',
     },
     card_info: {
-      height: 50,
+      flex: 1,
       alignItems: 'center',
       justifyContent: 'space-between',
       marginVertical: 20,
     },
     card_description: {
-      padding: 10,
+      padding: 40,
       paddingHorizontal: 20,       
     },
     foto: {
-      width: 280,
-      height: 280,   
+      width: 260,
+      height: 260,   
       },
   });
