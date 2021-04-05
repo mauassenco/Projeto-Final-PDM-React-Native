@@ -11,7 +11,7 @@ export default function Comentarios(props) {
   
     useEffect(() => {
       async function loadContent() {
-        const comentarios = await getComentarios(props.route.params.idProduto);
+        const comentarios = await getComentarios(props.route.params.id);
         setComentarios(comentarios);
       }
       loadContent();

@@ -1,23 +1,32 @@
 import React from "react";
-import { StyleSheet, Text, View, Image, TouchableHighlight } from "react-native";
+import { StyleSheet, Text, View, Image, TouchableHighlight, Button } from "react-native";
+import Ionicons from 'react-native-vector-icons/Ionicons';
+
+import { removerProduto} from '../services/ProdutosService'
 
 export default function Card(props) {
   return (  
     // <TouchableHighlight onPress = {() => props.navigation.navigate('Produto', {
     //   idProduto: props.id})}>  
     <TouchableHighlight onPress = {() => props.navigation.navigate('Produto', {
-      screen: 'Produto',
-      params:{'idProduto': props.id},
-      }
+          screen: 'Produto',
+          params:{'idProduto': props.id},         
+        }
       )}>  
-
-      <View style={styles.card} >
+      <View style={styles.card} >      
         <Image style={styles.foto} source={{ uri: props.img }} />
-        <View style={styles.card_description}>
-          <Text style={{ fontSize: 20, color: '#fff' }}>{props.produto}</Text>
+        <View style={styles.card_description}>          
+          <Text style={{ fontSize: 20, color: '#fff' }}>{props.produto}</Text> 
           <Text style={{ fontSize: 20, color: '#fff' }}>{props.preco}</Text> 
         </View>
-      </View>  
+        <Ionicons style={styles.closeButton}
+          name="close"
+          size={28}
+          color="#c70000"
+          onPress={() => removerProduto(props.id)} 
+        />
+
+      </View>        
     </TouchableHighlight>
     );
 }
@@ -31,13 +40,11 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     borderRadius: 10,
     shadowColor: "#000",
-    shadowOffset: {
-        width: 0,
-        height: 2,
-    },
+    shadowOffset: {width: 0, height: 2},
     shadowOpacity: 0.25,
     shadowRadius: 3.84,    
     elevation: 5,
+    position: 'relative',
   },
   card_description: {
     flex: 1,
@@ -50,5 +57,11 @@ const styles = StyleSheet.create({
     width: 80,
     height: 80,
     marginRight: 10,
+  },
+  closeButton:{
+    position: 'absolute',
+    right: 4,
+    top: 4,
+
   },
 });
