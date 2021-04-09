@@ -6,21 +6,21 @@ const { v4: uuidv4 } = require('uuid');
 
 var produtos = [
     {
-        id: uuidv4(),
+        id: 1,
         product: 'Bola de Basquete',
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining',
         img_url: 'https://cdn.ecvol.com/s/www.querocase.com.br/produtos/topsocket-bola-de-basquete/z/0.png?v=0',
         prod_price:'39.99',
     },
     {
-        id: uuidv4(),
+        id: 2,
         product: 'Chuteira',
         description: 'Chuteira vermelha',
         img_url: 'https://static.netshoes.com.br/produtos/chuteira-campo-nike-mercurial-vapor-13-club-fg/68/HZM-1898-068/HZM-1898-068_zoom1.jpg?ts=1579725255&ims=544x',
         prod_price:'99.99',
     },
     {
-        id: uuidv4(),
+        id: 3,
         product: 'Caneleira',
         description: 'Caneleira branca',
         img_url: 'https://static.netshoes.com.br/produtos/caneleira-adidas-everlite/28/COL-3398-028/COL-3398-028_zoom1.jpg?ts=1565966644',

@@ -2,13 +2,12 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-const Stack = createStackNavigator();
 
 import Produtos from './pages/Produtos';
-// import Produto from './pages/Produto';
-// import Comentarios from './pages/Comentarios';
 import Tabs from './routes/Tabs';
 import Cadastrar from './pages/Cadastrar';
+
+const Stack = createStackNavigator();
 
 export default function MyStack() {
   return (
@@ -26,7 +25,7 @@ export default function MyStack() {
                 onPress={() => navigation.navigate('Cadastrar')} />
               })} />
           <Stack.Screen 
-            name="Produto" component={Tabs} 
+            name="Produto" component={Tabs}            
             options={{ title:'Produto'}, {headerTitleAlign: 'center'}} />    
           <Stack.Screen 
             name="Cadastrar" component={Cadastrar} 

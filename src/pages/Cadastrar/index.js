@@ -28,14 +28,13 @@ export default function Cadastrar(){
                 <Button
                     title="Cadastrar produto"
                     style={styles.botao_remover}
-                    onPress={() => cadastrarProduto({
+                    onPress={(e) => cadastrarProduto({
                         product: nome,
                         description: descricao,
                         img_url: 'https://cdn.ecvol.com/s/www.querocase.com.br/produtos/topsocket-bola-de-basquete/z/0.png?v=0',
                         prod_price: preco,
                     })} />
             </View>
-
         </View>
 }
 

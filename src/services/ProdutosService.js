@@ -17,6 +17,7 @@ var removerProduto = async (id) => {
 var cadastrarProduto = async(produto) =>{
   const response = await axios.post('http://192.168.1.5:3031/produtos', produto);
   return response.data;
+  
 }
 
 export { getProdutos, getProduto, removerProduto, cadastrarProduto };

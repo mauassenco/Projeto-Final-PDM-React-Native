@@ -3,14 +3,15 @@ import { StyleSheet, Text, View, Image, TouchableHighlight, Button } from "react
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import { removerProduto} from '../services/ProdutosService'
+// import Tabs from '../routes/Tabs';
 
 export default function Card(props) {
   return (  
     // <TouchableHighlight onPress = {() => props.navigation.navigate('Produto', {
     //   idProduto: props.id})}>  
     <TouchableHighlight onPress = {() => props.navigation.navigate('Produto', {
-          screen: 'Produto',
-          params:{'idProduto': props.id},         
+          screen: 'Tabs',
+          idProduto: props.id,         
         }
       )}>  
       <View style={styles.card} >      

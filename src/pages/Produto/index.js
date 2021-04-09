@@ -10,7 +10,7 @@ export default function Produto(props){
 
   useEffect(() => {
     async function loadContent() {     
-      const produto = await getProduto(props.route.params.idProduto);
+      const produto = await getProduto(props.idProduto);
       setProduto(produto);
     }
     loadContent();
