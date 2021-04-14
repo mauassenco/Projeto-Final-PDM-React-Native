@@ -1,14 +1,15 @@
 import React, {useState, useEffect} from "react";
-import { Text, StyleSheet, View, FlatList } from "react-native";
+import { Text, StyleSheet, View, FlatList, Button, Alert } from "react-native";
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import CardComentario from '../../components/CardComentario';
 import { getComentarios } from '../../services/ComentariosService';
+import Comentar from '../../pages/Comentar';
+
 
 
 export default function Comentarios(props) {
-
-    const [comentarios, setComentarios] = useState([]);
-  
+    const [comentarios, setComentarios] = useState([]);  
     useEffect(() => {
       async function loadContent() {
         const comentarios = await getComentarios(props.idProduto);
@@ -30,7 +31,7 @@ export default function Comentarios(props) {
     }
   
     return (
-      <View style={styles.container}>       
+      <View style={styles.container}>   
         <FlatList
           data={comentarios}
           renderItem={renderItem}

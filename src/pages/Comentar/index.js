@@ -1,37 +1,37 @@
 import React from "react";
 import { Text, View, TextInput, StyleSheet, Button } from "react-native";
 
-import { cadastrarProduto } from '../../services/ProdutosService';
+import { cadastrarComentario } from '../../services/ComentariosService';
 
-export default function Cadastrar(){
-    const [nome, setNome] = React.useState("");
-    const [descricao, setDescricao] = React.useState("");
-    const [preco, setPreco] = React.useState("");
+export default function Comentar(){
+    const [nomeUser, setNomeUser] = React.useState("");
+    const [comentario, setComentario] = React.useState("");
+    const [estrelas, setEstrelas] = React.useState("");
 
   return <View style={styles.form_container}>
             <View style={styles.form}>
-                <Text style={styles.form_label}>Nome do produto</Text>
+                <Text style={styles.form_label}>Nome do usuario</Text>
                 <TextInput 
                     style={styles.form_input}
-                    onChangeText={setNome}
-                    value={nome}/>
-                <Text style={styles.form_label}>Descrição do produto</Text>
+                    onChangeText={setNomeUser}
+                    value={nomeUser}/>
+                <Text style={styles.form_label}>Comentário</Text>
                 <TextInput 
-                    style={styles.form_input_description}
-                    onChangeText={setDescricao}
-                    value={descricao}/>
-                <Text style={styles.form_label}>Preço do produto</Text>
+                    style={styles.form_input_comment}
+                    onChangeText={setComentario}
+                    value={comentario}/>
+                <Text style={styles.form_label}>Estrelas</Text>
                 <TextInput 
                     style={styles.form_input}
-                    onChangeText={setPreco}
-                    value={preco}/>
+                    onChangeText={setEstrelas}
+                    value={estrelas}/>
                 <Button
-                    title="Cadastrar produto"                    
-                    onPress={(e) => cadastrarProduto({
-                        product: nome,
-                        description: descricao,
-                        img_url: 'https://cdn.ecvol.com/s/www.querocase.com.br/produtos/topsocket-bola-de-basquete/z/0.png?v=0',
-                        prod_price: preco,
+                    title="Cadastrar comentário"                    
+                    onPress={(e) => cadastrarComentario(props.route.params.idProduto, {
+                        nome: nomeUser,
+                        comentario: comentario,
+                        foto: 'https://lirte.pesquisa.ufabc.edu.br/coletivo_mina/wp-content/uploads/sites/3/2019/09/youngdorothyvaughan.jpeg',
+                        estrelas: estrelas,
                     })} />
             </View>
         </View>
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,     
         color: '#fff',          
     },
-    form_input_description:{
+    form_input_comment:{
         borderWidth: 2,
         borderColor: '#fff',
         borderRadius: 10,

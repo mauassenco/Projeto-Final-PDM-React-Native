@@ -35,7 +35,7 @@ var comentarios = [
         idProduto: '1',
         foto:'https://www.esciupfnews.com/wp-content/uploads/2020/05/Charles-Babbage-data.jpg',
         nome: 'Charles Babage',
-        comentario: 'comentáriopessoa 1',
+        comentario: 'Comentário da pessoa 1 sobre o produto 1',
         estrelas: '5',
     },
     {
@@ -43,7 +43,7 @@ var comentarios = [
         idProduto: '1',
         foto:'https://i.pinimg.com/736x/82/12/ac/8212ac06b4c5ec6567a0b8e1e91775ab.jpg',
         nome: 'Alan Turing',
-        comentario: 'comentáriopessoa 2',
+        comentario: 'Comentário da pessoa 2 sobre o produto 1',
         estrelas: '4',
     },
     {
@@ -51,7 +51,7 @@ var comentarios = [
         idProduto: '1',
         foto:'https://s2.glbimg.com/paF5KTEVGzMU-ZcZa2mjYicNDjM=/e.glbimg.com/og/ed/f/original/2015/03/09/ada.jpg',
         nome: 'Ada Lovelace',
-        comentario: 'comentáriopessoa 3',
+        comentario: 'Comentário da pessoa 3 sobre o produto 1',
         estrelas: '3',
     },
     {
@@ -127,13 +127,6 @@ app.get('/produtos/:id', (req, res) => {
     const produto = produtos.filter((produto) => produto.id == req.params.id);
     res.send(produto[0]);
   });
-
-// Rota dos comentarios
-app.get('/produtos/:id/comentarios', (req, res) => {        
-    const comentariosProduto = comentarios.filter((comentario) => comentario.idProduto == req.params.id);
-    res.send(comentariosProduto);
-});
-
 // Adicionar produto
 app.post('/produtos', (req, res) => {
     const novoProduto = req.body;
@@ -147,6 +140,36 @@ app.delete('/produtos/:id', (req, res) => {
     produtos = produtos.filter((produto) => produto.id != req.params.id)
     res.send(produtos);
   });
+
+
+// Rota do comentarios - pegando um comentario
+app.get('/produtos/:idProduto/comentarios/:id', (req, res) => {
+    const comentario = comentarios.filter((comentario) => comentario.id == req.params.id);
+    res.send(comentario[0]);
+  });
+
+// Rota dos comentarios - pegando todos os comentarios
+app.get('/produtos/:id/comentarios', (req, res) => {        
+    const comentariosProduto = comentarios.filter((comentario) => comentario.idProduto == req.params.id);
+    res.send(comentariosProduto);
+});
+
+
+// Deletar comentario
+app.delete('/produtos/:idProduto/comentarios/:id', (req, res) => {
+    comentarios = comentarios.filter((comentario) => comentario.id != req.params.id)
+    res.send(comentarios);
+  });
+
+
+// Adicionar comentario
+app.post('/produtos/:idProduto/comentarios/:id', (req, res) => {
+    const novoComentario = req.body;
+    novoComentario.id = uuidv4();
+    comentarios.push(novoComentario);    
+    res.send(novoComentario);
+});
+
 
 
 app.listen(port, '0.0.0.0', () => {

@@ -1,9 +1,8 @@
 import React from "react";
-import { StyleSheet, Text, View, Image, TouchableHighlight, Button } from "react-native";
+import { StyleSheet, Text, View, Image, TouchableHighlight} from "react-native";
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import { removerProduto} from '../services/ProdutosService'
-// import Tabs from '../routes/Tabs';
 
 export default function Card(props) {
   return (  
@@ -55,8 +54,8 @@ const styles = StyleSheet.create({
     padding: 10, 
   },
   foto: {
-    width: 80,
-    height: 80,
+    width: 110,
+    height: 110,
     marginRight: 10,
   },
   closeButton:{

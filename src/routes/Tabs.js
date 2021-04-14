@@ -5,8 +5,6 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import Produto from '../pages/Produto';
 import Comentarios from '../pages/Comentarios';
-// import CardComentario from '../components/CardComentario';
-// import CardProduto from '../components/CardProduto';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -19,12 +17,15 @@ export default function Tabs(props) {
           }}>            
           {() => <Produto idProduto={props.route.params.idProduto} />}
         </Tab.Screen>
-        <Tab.Screen name="Comentarios" 
+        <Tab.Screen name="Comentarios"
           options={{
               tabBarIcon: ({ color, size }) => <Ionicons name='chatbubble-ellipses' size={26} color={color} />                          
-          }}>
-          {() => <Comentarios idProduto={props.route.params.idProduto} />}
+          }}>            
+          {() => <Comentarios idProduto={props.route.params.idProduto} />
+          }
         </Tab.Screen>   
     </Tab.Navigator>
   );
 }
+
+

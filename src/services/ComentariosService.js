@@ -5,4 +5,13 @@ var getComentarios = async (id) => {
   return response.data;
 }
 
-export { getComentarios };
+var removerComentario = async (id, idProduto) => {
+  const response = await axios.delete('http://192.168.1.5:3031/produtos/'+idProduto+'/comentarios/'+id);
+  return response.data;
+}
+var cadastrarComentario = async(idProduto, comentario) =>{
+  const response = await axios.post('http://192.168.1.5:3031/produtos/'+idProduto+'/comentarios/', comentario);
+  return response.data;  
+}
+
+export { getComentarios, removerComentario, cadastrarComentario};

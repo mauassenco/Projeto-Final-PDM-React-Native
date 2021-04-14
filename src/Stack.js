@@ -6,6 +6,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import Produtos from './pages/Produtos';
 import Tabs from './routes/Tabs';
 import Cadastrar from './pages/Cadastrar';
+import Comentar from './pages/Comentar';
 
 const Stack = createStackNavigator();
 
@@ -26,10 +27,20 @@ export default function MyStack() {
               })} />
           <Stack.Screen 
             name="Produto" component={Tabs}            
-            options={{ title:'Produto'}, {headerTitleAlign: 'center'}} />    
+            options={({navigation}) => ({ title: 'Produto',
+            headerRightContainerStyle: { paddingRight: 20 },
+            headerRight: () => <Ionicons
+              name="add"
+              size={40}
+              color="#4bb543"
+              onPress={() => navigation.navigate('Novo comentário')} />
+            })} />    
           <Stack.Screen 
             name="Cadastrar" component={Cadastrar} 
-            options={{ title:'Cadastrar Produto'}, {headerTitleAlign: 'center'}} />    
+            options={{ title:'Cadastrar Produto'}} />    
+          <Stack.Screen 
+            name="Novo comentário" component={Comentar}           
+          />    
       </Stack.Navigator>
   );
 }
