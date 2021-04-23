@@ -1,4 +1,6 @@
+import { useLinkProps } from "@react-navigation/native";
 import React from "react";
+
 import { Text, View, TextInput, StyleSheet, Button } from "react-native";
 
 import { cadastrarComentario } from '../../services/ComentariosService';
@@ -22,16 +24,16 @@ export default function Comentar(){
                     value={comentario}/>
                 <Text style={styles.form_label}>Estrelas</Text>
                 <TextInput 
-                    style={styles.form_input}
+                    style={styles.form_input}                    
                     onChangeText={setEstrelas}
                     value={estrelas}/>
-                <Button
+                <Button                    
                     title="Cadastrar comentário"                    
-                    onPress={(e) => cadastrarComentario(props.route.params.idProduto, {
+                    onPress={(e) => cadastrarComentario(  1, {
                         nome: nomeUser,
                         comentario: comentario,
                         foto: 'https://lirte.pesquisa.ufabc.edu.br/coletivo_mina/wp-content/uploads/sites/3/2019/09/youngdorothyvaughan.jpeg',
-                        estrelas: estrelas,
+                        estrelas: estrelas,      
                     })} />
             </View>
         </View>
@@ -79,5 +81,5 @@ const styles = StyleSheet.create({
         color: '#fcfcfc',
         fontSize: 18,
         fontWeight: 'bold',
-    }
+    }  
 })

@@ -10,7 +10,7 @@ var removerComentario = async (id, idProduto) => {
   return response.data;
 }
 var cadastrarComentario = async(idProduto, comentario) =>{
-  const response = await axios.post('http://192.168.1.5:3031/produtos/'+idProduto+'/comentarios/', comentario);
+  const response = await axios.post('http://192.168.1.5:3031/produtos/'+idProduto+'/comentarios/', comentario); // Teste adcionando direto ao produto 1
   return response.data;  
 }
 

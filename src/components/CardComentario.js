@@ -6,6 +6,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import { removerComentario } from '../services/ComentariosService';
 
 export default function CardComentario(props) {
+  // Estrelas dos comentarios
   let color = '#FFD700'
   let stars = [];
 

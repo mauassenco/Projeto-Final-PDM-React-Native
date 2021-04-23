@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const port = 3031;
 app.use(express.json());
-const { v4: uuidv4 } = require('uuid');
+// const { v4: uuidv4 } = require('uuid');
 
 var produtos = [
     {
@@ -130,7 +130,7 @@ app.get('/produtos/:id', (req, res) => {
 // Adicionar produto
 app.post('/produtos', (req, res) => {
     const novoProduto = req.body;
-    novoProduto.id = uuidv4();
+    novoProduto.id = produtos.length+1;
     produtos.push(novoProduto);    
     res.send(novoProduto);
 });
@@ -163,9 +163,9 @@ app.delete('/produtos/:idProduto/comentarios/:id', (req, res) => {
 
 
 // Adicionar comentario
-app.post('/produtos/:idProduto/comentarios/:id', (req, res) => {
+app.post('/produtos/:idProduto/comentarios/', (req, res) => {
     const novoComentario = req.body;
-    novoComentario.id = uuidv4();
+    novoComentario.id = comentarios.length+1;
     comentarios.push(novoComentario);    
     res.send(novoComentario);
 });

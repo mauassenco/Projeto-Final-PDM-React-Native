@@ -30,7 +30,7 @@ export default function MyStack() {
             options={({navigation}) => ({ title: 'Produto',
             headerRightContainerStyle: { paddingRight: 20 },
             headerRight: () => <Ionicons
-              name="add"
+              name="add-circle-outline"
               size={40}
               color="#4bb543"
               onPress={() => navigation.navigate('Novo comentário')} />
