@@ -14,3 +14,7 @@ Projeto da Disciplina Programação para Dispositivos Móveis, onde, usando Reac
 - React Native
 - Expo
 - Axios
+
+#Autor
+Mauricio Assenço
+https://www.linkedin.com/in/mauricio-assenco/
