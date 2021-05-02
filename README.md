@@ -15,6 +15,8 @@ Projeto da Disciplina Programação para Dispositivos Móveis, onde, usando Reac
 - Expo
 - Axios
 
-#Autor
+# Autor
+
 Mauricio Assenço
+
 https://www.linkedin.com/in/mauricio-assenco/
